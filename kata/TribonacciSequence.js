@@ -16,3 +16,26 @@ function tribonacci(signature,n){
 
 
   tribonacci([1,1,1],10) // [1,1,1,3,5,9,17,31,57,105]
+
+
+
+  // second solution using recursion
+
+  function tribonacci2(signature,n){
+    if (n >= 3) {
+      while (signature.length < n) {
+        signature.push(trib(signature))
+      }
+    } else {
+      while (signature.length > n) {
+        signature.pop()
+      }
+    }
+    return signature
+  }
+  
+  function trib (nums) {
+    return (nums[nums.length-1] + nums[nums.length-2] + nums[nums.length-3])
+  }
+
+  tribonacci2([1,1,1],10) // [1,1,1,3,5,9,17,31,57,105]
