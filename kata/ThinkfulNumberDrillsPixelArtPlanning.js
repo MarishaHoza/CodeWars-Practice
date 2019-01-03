@@ -4,7 +4,7 @@
 
 
 function isDivisible(wallLength, pixelSize){
-    return ((wallLength / pixelSize) === Math.floor(wallLength/pixelSize))
-  }
+    return (wallLength % pixelSize === 0)
+}
 
-  isDivisible(4050, 27) // true
+isDivisible(4050, 27) // true
